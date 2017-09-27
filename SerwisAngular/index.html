@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Serwis</title>
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <!--Libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <!-- Local Controllers -->
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div id="headerWrapper" ng-controller="HeaderCtrl">
+        <md-progress-linear ng-show="!isLoading"></md-progress-linear>
+        <div ng-class="{active: nav.isActive('/books')}">
+            <a href="#/books">
+                <img class="logo pull-left" src="imgs/bike-maintenance-share — kopia.jpg" />
+                <br />
+                <h2><span class="pull-left">{{appDetails.title}}</span></h2>
+            </a>
+        </div>
+        <!--<span class="pull-left">{{appDetails.tagline}}</span>-->
+        <div class="nav-wrapper pull-left">
+            <ul class="nav nav-pills">
+                <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books</a></li>
+                <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/kart')}"><a href="#/kart">Kart</a></li>
+                <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/naprawy')}"><a href="#/naprawy">Naprawy</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div ng-view class="container"></div>
+
+</body>
+</html>
