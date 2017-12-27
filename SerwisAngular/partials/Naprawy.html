@@ -7,13 +7,6 @@
         </div>
         </form>
 
-    <div class="w3-top">
-        <div class="w3-bar">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Naprawy</a>  
-        </div>
-    </div> 
-
         <table class="w3-table w3-striped w3-centered">
             <tr style="background-color:#4F84C4">
                 <th style="color:white">First Name</th>
@@ -21,20 +14,24 @@
                 <th style="color:white">Points</th>
             </tr>
             <tr>
-                <td>Agatka</td>
-                <td>Lirska</td>
+                <td>ELo</td>
+                <td>Siema</td>
                 <td>50</td>
             </tr>
             <tr>
-                <td>Piotruś</td>
-                <td>Ogureczek</td>
+                <td>Elo</td>
+                <td>lol</td>
                 <td>45</td>
             </tr>
         </table>
         
         <md-button class="w3-green" ng-click="clickLipka()">
-            Proszę, kliknij mnie Lipko!
+            Click ok
         </md-button>
+        
+        <div style="width: auto">
+            <mdp-time-picker mdp-auto-switch="true" ng-model="currentTime"></mdp-time-picker>
+        </div>
 
         <div class="w3-row">
             <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in selections">
@@ -55,6 +52,8 @@
         <div>
             <md-button ng-click="checkVarBtn()">Check local variables</md-button>
         </div>
+
+        <div></div>
         <!--<ul class="list-unstyled">
             <li class="book" ng-repeat="book in books | filter:searchStr"
                 style="background: white url('imgs/{{book.imgUrl}}') no-repeat">

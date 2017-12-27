@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ["ngRoute", "ngAnimate", "ngMaterial"]);
+var myApp = angular.module("myApp", ["ngRoute", "ngAnimate", "ngMaterial", "ngAria", "ngMessages", "mdPickers"]);
 
 myApp.config(function($routeProvider) {
 	$routeProvider
@@ -13,6 +13,14 @@ myApp.config(function($routeProvider) {
         .when("/naprawy", {
             templateUrl: "partials/Naprawy.html",
             controller: "NaprawyCtrl"
+        })
+        .when("/pogoda", {
+            templateUrl: "partials/Pogoda.html",
+            controller: "PogodaCtrl"
+        })
+        .when("/oneCurrency", {
+            templateUrl: "partials/OneCurrency.html",
+            controller: "OneCurrencyCtrl"
         })
 	.otherwise({
 		redirectTo: "/books"
@@ -144,39 +152,56 @@ myApp.controller("BookListCtrl", function($scope, bookService, kartService) {
 	$scope.isLoading = false;
 });
 
-myApp.controller("NaprawyCtrl", function ($scope, $http) {
-    var meetingSaveBox;
-    $scope.selectedContactType;
-    $scope.SelectNaprawy = ["Do zrobienia", "W trakcie", "Wykonane"];
-    $scope.selections = ["Siusiak", "Ziemniak", "Paróweczka", "Pasztecik", "Cycuszki"];
-    $scope.selected = ["Ziemniak", "Pasztecik"];
-    $scope.contactTypes = ["Meeting", "Email", "Phone call", "Event"];
-    $scope.selectedContactType = ["Email","Meeting"];
+//myApp.controller("NaprawyCtrl", ["$scope", "$http", "$mdpDatePicker", "$mdpTimePicker", function ($scope, $http, $mdpDatePicker, $mdpTimePicker) {
+//        var meetingSaveBox;
+//        $scope.selectedContactType;
+//        $scope.SelectNaprawy = ["Do zrobienia", "W trakcie", "Wykonane"];
+//        $scope.selections = ["Siusiak", "Ziemniak", "Paróweczka", "Pasztecik"];
+//        $scope.selected = ["Ziemniak", "Pasztecik"];
+//        $scope.contactTypes = ["Meeting", "Email", "Phone call", "Event"];
+//        $scope.selectedContactType = ["Email","Meeting"];
 
-    $scope.toggle = function (item, list) {
-        var idx = list.indexOf(item);
-        if (idx > -1) {
-            list.splice(idx, 1);
-        }
-        else {
-            list.push(item);
-        }
-    };
+//        $scope.currentDate = new Date();
 
-    $scope.exists = function (item, list) {
-        return list.indexOf(item) > -1;
-    };
+//        $scope.currentTime = new Date();
 
-    $scope.clickContact = function () {
-        $scope.selectedContactType;
-        //$scope.selectedContactType = $scope.selectedContactType.slice();
-    }
+//        this.showTimePicker = function (ev) {
+//            $mdpTimePicker($scope.currentTime, {
+//                targetEvent: ev
+//            }).then(function (selectedDate) {
+//                //$scope.currentTime = selectedDate;
+//            });
+//        }
 
-    $scope.checkVarBtn = function () {
-        var meetingSaveBox = $scope.selectedContactType;
-    }
+//        this.filterDate = function (date) {
+//            return moment(date).date() % 2 == 0;
+//        };
 
-    $scope.clickLipka = function () {
-        alert("cos");
-    }
-});
+//        $scope.toggle = function (item, list) {
+//            var idx = list.indexOf(item);
+//            if (idx > -1) {
+//                list.splice(idx, 1);
+//            }
+//            else {
+//                list.push(item);
+//            }
+//        };
+
+//        $scope.exists = function (item, list) {
+//            return list.indexOf(item) > -1;
+//        };
+
+//        $scope.clickContact = function () {
+//            $scope.selectedContactType;
+//            //$scope.selectedContactType = $scope.selectedContactType.slice();
+//        }
+
+//        $scope.checkVarBtn = function () {
+//            var meetingSaveBox = $scope.selectedContactType;
+//        }
+
+//        $scope.clickLipka = function () {
+//            alert("Witek to szmatka :* ");
+//        }
+//    }
+//]);

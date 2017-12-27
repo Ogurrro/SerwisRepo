@@ -5,7 +5,7 @@
 
 .logo {
     padding: 10px;
-    margin-right: 10x;
+    margin-right: 10px;
     font-size: 35px;
     font-family: fantasy;
 }
@@ -81,3 +81,21 @@
 	opacity:1;
 	left: 0;
 }
+
+div.menu_links a:link {
+    text-decoration: none;
+}
+
+div.menu_links a:active {
+    text-decoration: none;
+    background-color: gray !important;
+}
+
+div.menu_links a:hover {
+    text-decoration: none;
+    background-color: darkslategray;
+}
+
+/*.active {
+    background-color: #ADFF2F;
+}*/ 

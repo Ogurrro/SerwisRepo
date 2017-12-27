@@ -1,0 +1,23 @@
+﻿<div>
+    <table class="w3-table w3-striped w3-centered"> 
+        <tr class="w3-green">
+            <th>
+                Waluta
+            </th>
+            <th>
+                Wartość
+            </th>
+            <th>
+                Data pobrania {{pData.effectiveDate | date: "dd-MM-yyyy"}}
+            </th>
+        </tr>
+        <tr ng-repeat="data in pData.rates" class="w3-hover-green" ng-click="openCurrency(data)">
+            <td style="text-align: left !important">
+                {{data.code}}&nbsp;&nbsp;|&nbsp;&nbsp;{{data.currency}}
+            </td>
+            <td>
+                {{data.mid}}
+            </td>
+        </tr>
+    </table>
+</div>

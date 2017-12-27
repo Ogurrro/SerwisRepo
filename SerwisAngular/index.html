@@ -3,11 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Serwis</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!--Stylesheets-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://cdn.rawgit.com/alenaksu/mdPickers/0.7.4/dist/mdPickers.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
@@ -16,14 +20,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script  src="https://cdn.rawgit.com/alenaksu/mdPickers/0.7.4/dist/mdPickers.min.js"></script>
+
 
     <!-- Local Controllers -->
     <script src="app.js"></script>
+    <script src="partials/NaprawyCtrl.js"></script>
+    <script src="partials/PogodaCtrl.js"></script>
+    <script src="SerwisFactory.js"></script>
+    <script src="partials/OneCurrencyCtrl.js"></script>
 </head>
 <body>
 
     <div id="headerWrapper" ng-controller="HeaderCtrl">
         <md-progress-linear ng-show="!isLoading"></md-progress-linear>
+        <div class="w3-bar w3-top w3-black menu_links">
+            <!--<ul class="nav nav-pills">
+                <li  ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books</a></li>
+                <li  ng-class="{active: nav.isActive('/kart')}"><a href="#/kart">Kart</a></li>
+                <li  ng-class="{active: nav.isActive('/naprawy')}"><a href="#/naprawy">Naprawy</a></li>
+            </ul>-->
+            <!--<div ng-class="{active: nav.isActive('/books')}"><a href="#/books" class="w3-bar-item w3-button">Home</a></div>
+            <div ng-class="{active: nav.isActive('/kart')}"><a href="#/kart" class="w3-bar-item w3-button">Kart</a></div>
+            <div ng-class="{active: nav.isActive('/naprawy')}"><a href="#/naprawy" class="w3-bar-item w3-button active">Naprawy</a></div>
+            <div><a href="#" class="w3-bar-item w3-button">Link 3</a></div>-->
+
+            <a href="#/books" class="w3-bar-item">Home</a>
+            <a href="#/kart" class="w3-bar-item ">Kart</a>
+            <a href="#/naprawy" class="w3-bar-item">Naprawy</a>
+            <a href="#/pogoda" class="w3-bar-item ">Pogoda</a>
+        </div> 
         <div ng-class="{active: nav.isActive('/books')}">
             <a href="#/books">
                 <img class="logo pull-left" src="imgs/bike-maintenance-share — kopia.jpg" />
@@ -32,13 +59,13 @@
             </a>
         </div>
         <!--<span class="pull-left">{{appDetails.tagline}}</span>-->
-        <div class="nav-wrapper pull-left">
+        <!--<div class="nav-wrapper pull-left">
             <ul class="nav nav-pills">
                 <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books</a></li>
                 <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/kart')}"><a href="#/kart">Kart</a></li>
                 <li style="background-color:#4F84C4" ng-class="{active: nav.isActive('/naprawy')}"><a href="#/naprawy">Naprawy</a></li>
             </ul>
-        </div>
+        </div>-->
     </div>
 
     <div ng-view class="container"></div>
