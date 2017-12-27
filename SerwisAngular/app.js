@@ -126,7 +126,7 @@ myApp.controller("KartListCtrl", function($scope, kartService) {
 	}
 });
 
-myApp.controller("HeaderCtrl", function($scope, $location) {
+myApp.controller("HeaderCtrl", function($scope, $location, $window) {
 
     $scope.appDetails = {};
 	$scope.appDetails.title = "SERWIS";
@@ -140,6 +140,29 @@ myApp.controller("HeaderCtrl", function($scope, $location) {
 		
 		return false;
 	}
+    
+	var w = angular.element($window);
+	$scope.watchWidth = window.innerWidth;
+	if (window.innerWidth > 1280) {
+	    $scope.smallNavBar = false;
+	}
+	else {
+	    $scope.smallNavBar = true;
+	}
+
+	w.bind('resize', function () {
+	    var www = window.innerWidth;
+	    //alert('windows resized');
+	    $scope.watchWidth = www;
+	    if (www > 1280) {
+	        $scope.smallNavBar = false;
+	    }
+	    else {
+	        $scope.smallNavBar = true;
+	    }
+	    //console.log('resize');
+	});
+
 });
 
 myApp.controller("BookListCtrl", function($scope, bookService, kartService) {

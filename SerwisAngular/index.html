@@ -35,7 +35,7 @@
 
     <div id="headerWrapper" ng-controller="HeaderCtrl">
         <md-progress-linear ng-show="!isLoading"></md-progress-linear>
-        <div class="w3-bar w3-top w3-black menu_links">
+        <div class="w3-bar w3-top w3-black menu_links" ng-show="!smallNavBar">
             <!--<ul class="nav nav-pills">
                 <li  ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books</a></li>
                 <li  ng-class="{active: nav.isActive('/kart')}"><a href="#/kart">Kart</a></li>
@@ -49,7 +49,8 @@
             <a href="#/books" class="w3-bar-item">Home</a>
             <a href="#/kart" class="w3-bar-item ">Kart</a>
             <a href="#/naprawy" class="w3-bar-item">Naprawy</a>
-            <a href="#/pogoda" class="w3-bar-item ">Pogoda</a>
+            <a href="#/pogoda" class="w3-bar-item">Pogoda</a>
+            <a class="w3-bar-item">{{watchWidth}}</a>
         </div> 
         <div ng-class="{active: nav.isActive('/books')}">
             <a href="#/books">
