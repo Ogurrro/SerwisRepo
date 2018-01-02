@@ -35,7 +35,7 @@
 
     <div id="headerWrapper" ng-controller="HeaderCtrl">
         <md-progress-linear ng-show="!isLoading"></md-progress-linear>
-        <div class="w3-bar w3-top w3-black menu_links" ng-show="!smallNavBar">
+        <div class="w3-bar w3-top w3-black menu_links">
             <!--<ul class="nav nav-pills">
                 <li  ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books</a></li>
                 <li  ng-class="{active: nav.isActive('/kart')}"><a href="#/kart">Kart</a></li>
@@ -46,11 +46,19 @@
             <div ng-class="{active: nav.isActive('/naprawy')}"><a href="#/naprawy" class="w3-bar-item w3-button active">Naprawy</a></div>
             <div><a href="#" class="w3-bar-item w3-button">Link 3</a></div>-->
 
-            <a href="#/books" class="w3-bar-item">Home</a>
-            <a href="#/kart" class="w3-bar-item ">Kart</a>
-            <a href="#/naprawy" class="w3-bar-item">Naprawy</a>
-            <a href="#/pogoda" class="w3-bar-item">Pogoda</a>
-            <a class="w3-bar-item">{{watchWidth}}</a>
+            <a href="#/books" class="w3-bar-item" ng-if="smallNavBar">Home</a>
+            <a href="#/kart" class="w3-bar-item" ng-if="smallNavBar">Kart</a>
+            <a href="#/naprawy" class="w3-bar-item" ng-if="smallNavBar">Naprawy</a>
+            <a href="#/pogoda" class="w3-bar-item" ng-if="smallNavBar">Pogoda</a>
+            <a class="w3-bar-item" ng-if="smallNavBar">{{watchWidth}}</a>
+            <div class="w3-dropdown-hover" ng-if="!smallNavBar">
+                <button class="w3-button w3-dark-gray" style="max-height: 38px; margin-bottom: 0px; line-height: 0.25em"><i class="material-icons iconVAlign" style="font-size: 24px; transform: translateY(-10%)">local_pizza</i><b>Menu</b></button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-dark-gray" style="margin-top:0px">
+                    <a href="#/naprawy" class="w3-bar-item w3-button"><b>Client List</b></a>
+                    <a href="#/pogoda" class="w3-bar-item w3-button"><b>Prospect List</b></a>
+                    <a class="w3-bar-item">{{watchWidth}}</a>
+                </div>
+            </div>
         </div> 
         <div ng-class="{active: nav.isActive('/books')}">
             <a href="#/books">

@@ -99,3 +99,10 @@ div.menu_links a:hover {
 /*.active {
     background-color: #ADFF2F;
 }*/ 
+
+
+.iconVAlign {
+
+    vertical-align: middle !important;
+
+}

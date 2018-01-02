@@ -126,8 +126,10 @@ myApp.controller("KartListCtrl", function($scope, kartService) {
 	}
 });
 
-myApp.controller("HeaderCtrl", function($scope, $location, $window) {
+myApp.controller("HeaderCtrl", function($scope, $location, $window, $rootScope) {
 
+    $scope.smallNavBar = false;
+    $scope.watchWidth;
     $scope.appDetails = {};
 	$scope.appDetails.title = "SERWIS";
 	$scope.appDetails.tagline = "Najlepszy serwis w mieœcie xD";
@@ -137,13 +139,13 @@ myApp.controller("HeaderCtrl", function($scope, $location, $window) {
 		if (path === $location.path()) {
 			return true;
 		}
-		
 		return false;
 	}
     
 	var w = angular.element($window);
-	$scope.watchWidth = window.innerWidth;
-	if (window.innerWidth > 1280) {
+	var www = window.innerWidth;
+	$scope.watchWidth = www;
+	if (www > 1280) {
 	    $scope.smallNavBar = false;
 	}
 	else {
@@ -151,7 +153,7 @@ myApp.controller("HeaderCtrl", function($scope, $location, $window) {
 	}
 
 	w.bind('resize', function () {
-	    var www = window.innerWidth;
+	    www = window.innerWidth;
 	    //alert('windows resized');
 	    $scope.watchWidth = www;
 	    if (www > 1280) {
@@ -160,7 +162,6 @@ myApp.controller("HeaderCtrl", function($scope, $location, $window) {
 	    else {
 	        $scope.smallNavBar = true;
 	    }
-	    //console.log('resize');
 	});
 
 });

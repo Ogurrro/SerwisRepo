@@ -14,7 +14,7 @@
                 Wartość
             </th>
         </tr>
-        <tr ng-repeat="curr in currency.rates">
+        <tr ng-repeat="curr in currency.rates | orderBy: '-effectiveDate'">
             <td>
                 {{curr.effectiveDate | date: "dd-MM-yyyy"}}
             </td>

@@ -18,14 +18,14 @@
 
         var vm = this;
 
-        var w = angular.element($window);
-        $scope.getWidth = w.width();
-        if (w.width() > 1280) {
+        //var w = angular.element($window);
+        //$scope.getWidth = w.width();
+        //if (w.width() > 1280) {
             
-        }
-        else {
+        //}
+        //else {
 
-        }
+        //}
 
         //$scope.$watch();
 
