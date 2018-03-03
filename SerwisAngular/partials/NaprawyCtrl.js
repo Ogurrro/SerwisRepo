@@ -17,17 +17,16 @@
     function NaprawyCtrl($log, $rootScope, $window, $q, $scope, SerwisFactory) {
 
         var vm = this;
+        
+        $scope.modelTxt = "1234567";
 
-        //var w = angular.element($window);
-        //$scope.getWidth = w.width();
-        //if (w.width() > 1280) {
-            
-        //}
-        //else {
+        $scope.txtChanged = function (text) {
+            if (text.length != 0) {
+                $scope.modelTxt = text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            }
+        }
 
-        //}
-
-        //$scope.$watch();
+        $scope.txtChanged($scope.modelTxt);
 
         $scope.clickLipka = function () {
             alert("Lubię placki");

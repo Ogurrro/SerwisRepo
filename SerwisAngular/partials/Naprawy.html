@@ -25,6 +25,16 @@
             </tr>
         </table>
         
+        <div class="row w3-gray">
+            <div class="col-xs-12">
+                <form>
+                    <md-input-container style="width: 100%">
+                        <input ng-model="modelTxt" placeholder="Podaj kwotę" ng-change="txtChanged(modelTxt)">
+                    </md-input-container>
+                </form>
+            </div>
+        </div>
+
         <md-button class="w3-green" ng-click="clickLipka()">
             Click ok
         </md-button>

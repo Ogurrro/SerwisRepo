@@ -2,7 +2,7 @@
     <table class="w3-table w3-striped w3-centered"> 
         <tr class="w3-green">
             <th>
-                Waluta ({{pData.effectiveDate | date: "dd-MM-yyyy"}})
+                Waluta ({{pData.effectiveDate ? (pData.effectiveDate | date: "dd-MM-yyyy") : 'brak danych'}})
             </th>
             <th>
                 Wartość
@@ -10,10 +10,14 @@
         </tr>
         <tr ng-repeat="data in pData.rates" class="w3-hover-green" ng-click="openCurrency(data)">
             <td style="text-align: left !important">
-                {{data.code}}&nbsp;&nbsp;|&nbsp;&nbsp;{{data.currency}}
+                <div class="row" style="width: 100%">
+                    <div class="col-xs-1">{{::data.code}}</div>
+                    <div class="col-xs-1">|</div>
+                    <div class="col-xs-9" style="text-align: left">{{::data.currency}}</div>
+                </div>
             </td>
             <td>
-                {{data.mid}}
+                {{::data.mid}}
             </td>
         </tr>
     </table>

@@ -16,14 +16,22 @@
         //$q.when(SerwisFactory.tempData).then(displayerTemp);
         //var fcg = [];
 
-        $http({
-            method: 'GET',
-            url: 'http://api.nbp.pl/api/exchangerates/tables/a/?format=json'
-        }).then(function successCallback(response) {
-            $scope.pData = response.data[0];
-        }, function errorCallback(response) {
-            $scope.error = response.data;
-        });
+        //$http({
+        //    method: 'GET',
+        //    url: 'http://api.nbp.pl/api/exchangerates/tables/a/?format=json'
+        //}).then(function successCallback(response) {
+        //    $scope.pData = response.data[0];
+        //}, function errorCallback(response) {
+        //    $scope.error = response.data;
+        //});
+
+        SerwisFactory.getAllCurrency();
+
+        $q.when(SerwisFactory.allCurrencyData).then(displayerAllCurrency);
+
+        function displayerAllCurrency(result) {
+            $scope.pData = result;
+        }
 
         $scope.openCurrency = function (currData) {
             $http({
