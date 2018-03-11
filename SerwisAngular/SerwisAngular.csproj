@@ -76,7 +76,9 @@
     <Content Include="imgs\wings-of-fire.jpeg" />
     <Content Include="packages.config" />
     <Content Include=".project" />
-    <Content Include="partials\NaprawyCtrl.js" />
+    <Content Include="partials\Naprawy\DodajNaprawe.html" />
+    <Content Include="partials\Naprawy\DodajNapraweCtrl.js" />
+    <Content Include="partials\Naprawy\NaprawyCtrl.js" />
     <Content Include="partials\OneCurrency.html" />
     <Content Include="partials\OneCurrencyCtrl.js" />
     <Content Include="partials\Pogoda.html" />
@@ -105,7 +107,7 @@
     <Content Include="index.html" />
     <Content Include="partials\book-list.html" />
     <Content Include="partials\kart-list.html" />
-    <Content Include="partials\Naprawy.html" />
+    <Content Include="partials\Naprawy\Naprawy.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
