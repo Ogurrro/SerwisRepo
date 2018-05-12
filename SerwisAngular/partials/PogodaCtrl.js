@@ -36,7 +36,7 @@
         $scope.openCurrency = function (currData) {
             $http({
                 method: 'GET',
-                url: 'http://api.nbp.pl/api/exchangerates/rates/a/'+currData.code+'/last/10/?format=json'
+                url: 'http://api.nbp.pl/api/exchangerates/rates/a/' + currData.code + '/last/10/?format=json'
             }).then(function successCallback(response) {
                 var oneCurrency = response.data;
                 $rootScope.rOneCurrency = oneCurrency;
@@ -44,7 +44,7 @@
             }, function errorCallback(response) {
                 $scope.error = response.data;
             });
-        }
+        };
 
         function displayerTemp(result) {
             $scope.allData = result[0];
@@ -56,4 +56,4 @@
 
     }
 
-})()
+})();

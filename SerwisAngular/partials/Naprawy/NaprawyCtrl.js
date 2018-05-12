@@ -10,27 +10,27 @@
 
 
 
-    NaprawyCtrl.$inject = ['$log', '$rootScope', '$window', '$q', '$scope', 'SerwisFactory', '$mdDialog'];
+    NaprawyCtrl.$inject = ['$log', '$rootScope', '$window', '$q', '$scope', 'SerwisFactory', '$mdDialog', 'toastr'];
 
 
 
-    function NaprawyCtrl($log, $rootScope, $window, $q, $scope, SerwisFactory, $mdDialog) {
+    function NaprawyCtrl($log, $rootScope, $window, $q, $scope, SerwisFactory, $mdDialog, toastr) {
 
         var vm = this;
-        
+
         $scope.modelTxt = "1234567";
 
         $scope.txtChanged = function (text) {
-            if (text.length != 0) {
+            if (text.length !== 0) {
                 $scope.modelTxt = text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             }
-        }
+        };
 
         $scope.txtChanged($scope.modelTxt);
 
         $scope.clickLipka = function () {
             alert("Lubię placki");
-        }
+        };
 
 
         $scope.dodajNapraweDialog = function (ev) {
@@ -56,9 +56,9 @@
                 }
             }).then(function (answer) {
 
-                toastr.success('Meeting added', { timeOut: 1600, positionClass: 'toast-bottom-right', showMethod: 'slideDown' });
+                toastr.success('Meeting added', { timeOut: 1000, positionClass: 'toast-bottom-right', showMethod: 'slideDown' });
 
-                $q.when(contactFactory.clientContactListData).then(displayerClientContacts);
+                //$q.when(contactFactory.clientContactListData).then(displayerClientContacts);
 
             }, function () {
 
@@ -76,4 +76,4 @@
 
     }
 
-})()
+})();
