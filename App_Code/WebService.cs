@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Security.Principal;
 using System.Web.Script.Services;
 using System.Web.Services;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Opis podsumowujący dla WebService
@@ -17,4 +18,12 @@ public class WebService
         // TODO: Tutaj dodaj logikę konstruktora
         //
     }
+
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public static string getNaprawy()
+    {
+        return Naprawy.getNaprawy();
+    }
+
 }
