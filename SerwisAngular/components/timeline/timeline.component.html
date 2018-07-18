@@ -1,10 +1,10 @@
 ﻿<div class="timelineContainer">
 
     <ul class="timeline" id="timeline">
-        <li ng-repeat="status in $ctrl.statusList" class="li" ng-class="{'complete': status.completed}">
+        <li ng-repeat="status in $ctrl.statusList" class="li" ng-class="{'complete': status.completed}" ng-click="status.completed = !status.completed">
             <div class="timestamp">
                 <span class="author">{{status.descr}}</span>
-                <span class="date">{{status.inputDate | date: 'dd-MM-yyyy'}}</span>
+                <span class="date">{{status.inputDate ? (status.inputDate | date: 'dd-MM-yyyy') : '&nbsp;'}}</span>
             </div>
             <div class="status">
                 <h4>{{status.status | uppercase}}</h4>
