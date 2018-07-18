@@ -1,15 +1,15 @@
 var myApp = angular.module("myApp", ["ngRoute", "ngAnimate", "toastr", "ngMaterial", "ngAria", "ngMessages", "mdPickers"]);
 
 myApp.config(function($routeProvider) {
-	$routeProvider
-		.when("/books", {
-			templateUrl: "partials/book-list.html",
-			controller: "BookListCtrl"
-		})
-		.when("/kart", {
-			templateUrl: "partials/kart-list.html",
-			controller: "KartListCtrl"
-		})
+    $routeProvider
+        .when("/books", {
+            templateUrl: "partials/book-list.html",
+            controller: "BookListCtrl"
+        })
+        .when("/kart", {
+            templateUrl: "partials/kart-list.html",
+            controller: "KartListCtrl"
+        })
         .when("/naprawy", {
             templateUrl: "partials/Naprawy.html",
             controller: "NaprawyCtrl"
@@ -21,6 +21,9 @@ myApp.config(function($routeProvider) {
         .when("/oneCurrency", {
             templateUrl: "partials/OneCurrency.html",
             controller: "OneCurrencyCtrl"
+        })
+        .when("/timeline", {
+            template: '<timeline-component></timeline-component>'
         })
 	.otherwise({
 		redirectTo: "/books"
